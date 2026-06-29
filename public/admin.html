@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel — Regina Villa</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/images/logo.jpg" />
+  <style>
+    body { min-height: 100vh; background: var(--dark); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 3rem 1.5rem; }
+
+    .admin-wrapper { width: 100%; max-width: 720px; }
+
+    .admin-head {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .admin-head img {
+      width: 65px;
+      filter: brightness(0) invert(1);
+      opacity: 0.6;
+      margin: 0 auto 1rem;
+    }
+    .admin-head h1 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .admin-head p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      margin-top: 0.3rem;
+    }
+    .admin-badge {
+      display: inline-block;
+      margin-top: 0.7rem;
+      padding: 0.3rem 0.9rem;
+      background: rgba(200,169,110,0.1);
+      border: 1px solid rgba(200,169,110,0.25);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .admin-panel {
+      background: var(--dark-3);
+      border: 1px solid rgba(200,169,110,0.15);
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .admin-panel h2 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(200,169,110,0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .admin-panel h2 svg { color: var(--gold); }
+
+    .admin-msg {
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.85rem;
+      border-radius: 0;
+      display: none;
+    }
+    .admin-msg.success { display: block; background: rgba(45,90,39,0.25); border-left: 3px solid #5cb85c; color: #8adf8a; }
+    .admin-msg.error   { display: block; background: rgba(180,30,30,0.25); border-left: 3px solid #e05252; color: #e88; }
+
+    .password-gate { text-align: center; }
+    .password-gate p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+    .current-values {
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .current-values h4 { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.8rem; }
+    .cv-item { display: flex; gap: 0.8rem; font-size: 0.82rem; margin-bottom: 0.5rem; }
+    .cv-label { color: var(--text-muted); min-width: 80px; }
+    .cv-val { color: var(--gold); }
+
+    .inquiry-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .inquiry-table th {
+      text-align: left;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.5rem 0.8rem;
+      border-bottom: 1px solid rgba(200,169,110,0.15);
+    }
+    .inquiry-table td {
+      font-size: 0.82rem;
+      color: var(--cream);
+      padding: 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+    .inquiry-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .empty-state { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; }
+
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid rgba(200,169,110,0.1);
+      margin-bottom: 2rem;
+    }
+    .tab-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-family: var(--font-sans);
+      transition: 0.2s;
+    }
+    .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+<div class="admin-wrapper">
+
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Website
+  </a>
+
+  <div class="admin-head">
+    <img src="/images/logo.jpg" alt="Regina Villa" />
+    <h1>Admin Panel</h1>
+    <p>Regina Villa · Galle, Sri Lanka</p>
+    <span class="admin-badge">Administrator Access</span>
+  </div>
+
+  <!-- Login Gate -->
+  <div class="admin-panel" id="loginPanel">
+    <h2>
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Administrator Login
+    </h2>
+    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem">Enter the admin password to manage your villa settings.</p>
+    <div class="form-group">
+      <label for="adminPass">Admin Password</label>
+      <input id="adminPass" type="password" placeholder="Enter admin password" onkeydown="if(event.key==='Enter') login()" />
+    </div>
+    <div id="loginMsg" class="admin-msg"></div>
+    <button class="btn btn-gold" onclick="login()" style="width:100%;justify-content:center">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+      Sign In
+    </button>
+  </div>
+
+  <!-- Admin Dashboard (hidden until logged in) -->
+  <div id="adminDash" style="display:none">
+
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('contact')">Contact Settings</button>
+      <button class="tab-btn" onclick="switchTab('inquiries')">Inquiries</button>
+    </div>
+
+    <!-- ── Contact Settings Tab ── -->
+    <div class="tab-content active" id="tab-contact">
+      <div class="admin-panel">
+        <h2>
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.73-.73a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z"/></svg>
+          Update Contact Information
+        </h2>
+
+        <div class="current-values" id="currentValues">
+          <h4>Current Published Values</h4>
+          <div class="cv-item"><span class="cv-label">Phone:</span> <span class="cv-val" id="cur-phone">—</span></div>
+          <div class="cv-item"><span class="cv-label">WhatsApp:</span> <span class="cv-val" id="cur-whatsapp">—</span></div>
+          <div class="cv-item"><span class="cv-label">Email:</span> <span class="cv-val" id="cur-email">—</span></div>
+          <div class="cv-item"><span class="cv-label">Address:</span> <span class="cv-val" id="cur-address">—</span></div>
+        </div>
+
+        <div id="contactMsg" class="admin-msg"></div>
+
+        <div class="form-group">
+          <label for="upd-phone">Telephone Number</label>
+          <input id="upd-phone" type="text" placeholder="+94 91 234 5678" />
+        </div>
+        <div class="form-group">
+          <label for="upd-whatsapp">WhatsApp Number</label>
+          <input id="upd-whatsapp" type="text" placeholder="+94 77 123 4567" />
+        </div>
+        <div class="form-group">
+          <label for="upd-email">Email Address</label>
+          <input id="upd-email" type="email" placeholder="stay@reginavilla.lk" />
+        </div>
+        <div class="form-group">
+          <label for="upd-address">Full Address</label>
+          <textarea id="upd-address" placeholder="Full villa address..." style="min-height:80px"></textarea>
+        </div>
+
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <button class="btn btn-gold" onclick="saveContact()" id="saveBtn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save Changes
+          </button>
+          <button class="btn btn-outline" onclick="loadCurrentContact()">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.49"/></svg>
+            Reload Current
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Inquiries Tab ── -->
+    <div class="tab-content" id="tab-inquiries">
+      <div class="admin-panel">
+        <h2>
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Guest Inquiries
+        </h2>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; flex-wrap:wrap; gap:1rem">
+          <p style="font-size:0.82rem; color:var(--text-muted)">All booking inquiries received from the website.</p>
+          <button class="btn btn-outline" style="padding:0.5rem 1rem; font-size:0.72rem" onclick="loadInquiries()">Refresh</button>
+        </div>
+
+        <div id="inquiriesContainer">
+          <div class="empty-state">Loading inquiries...</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let adminPassword = '';
+
+function login() {
+  const pass = document.getElementById('adminPass').value;
+  if (!pass) { showMsg('loginMsg', 'Please enter the admin password.', 'error'); return; }
+  adminPassword = pass;
+  // Test by loading contact
+  fetch('/api/contact')
+    .then(r => r.json())
+    .then(data => {
+      // Try saving with the password to verify
+      return fetch('/api/admin/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          phone: data.phone,
+          address: data.address,
+          email: data.email,
+          whatsapp: data.whatsapp,
+          adminPassword: pass,
+        }),
+      });
+    })
+    .then(r => r.json())
+    .then(res => {
+      if (res.success) {
+        document.getElementById('loginPanel').style.display = 'none';
+        document.getElementById('adminDash').style.display = 'block';
+        loadCurrentContact();
+        loadInquiries();
+      } else {
+        showMsg('loginMsg', 'Incorrect password. Please try again.', 'error');
+        adminPassword = '';
+      }
+    })
+    .catch(() => { showMsg('loginMsg', 'Server error. Please check connection.', 'error'); });
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  event.target.classList.add('active');
+}
+
+async function loadCurrentContact() {
+  try {
+    const d = await fetch('/api/contact').then(r => r.json());
+    document.getElementById('cur-phone').textContent = d.phone || '—';
+    document.getElementById('cur-whatsapp').textContent = d.whatsapp || '—';
+    document.getElementById('cur-email').textContent = d.email || '—';
+    document.getElementById('cur-address').textContent = d.address || '—';
+    // Pre-fill fields
+    document.getElementById('upd-phone').value = d.phone || '';
+    document.getElementById('upd-whatsapp').value = d.whatsapp || '';
+    document.getElementById('upd-email').value = d.email || '';
+    document.getElementById('upd-address').value = d.address || '';
+  } catch {}
+}
+
+async function saveContact() {
+  const btn = document.getElementById('saveBtn');
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  const payload = {
+    phone: document.getElementById('upd-phone').value,
+    whatsapp: document.getElementById('upd-whatsapp').value,
+    email: document.getElementById('upd-email').value,
+    address: document.getElementById('upd-address').value,
+    adminPassword,
+  };
+
+  try {
+    const res = await fetch('/api/admin/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (data.success) {
+      showMsg('contactMsg', '✓ Contact information updated successfully! Changes are now live on the website.', 'success');
+      loadCurrentContact();
+    } else {
+      showMsg('contactMsg', '✗ Error: ' + (data.error || 'Unknown error'), 'error');
+    }
+  } catch {
+    showMsg('contactMsg', '✗ Server error. Please try again.', 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Save Changes`;
+  }
+}
+
+async function loadInquiries() {
+  const container = document.getElementById('inquiriesContainer');
+  container.innerHTML = '<div class="empty-state">Loading...</div>';
+  try {
+    const res = await fetch(`/api/admin/inquiries?adminPassword=${encodeURIComponent(adminPassword)}`);
+    const data = await res.json();
+
+    if (!Array.isArray(data) || data.length === 0) {
+      container.innerHTML = '<div class="empty-state">No inquiries yet. Check back after guests submit the form.</div>';
+      return;
+    }
+
+    let html = `<table class="inquiry-table">
+      <thead><tr>
+        <th>Date</th><th>Name</th><th>Email</th><th>Duration</th><th>Message</th><th></th>
+      </tr></thead>
+      <tbody>`;
+
+    data.forEach(inq => {
+      const d = new Date(inq.timestamp);
+      const dateStr = d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+      const msg = (inq.message || '').substring(0, 80) + (inq.message?.length > 80 ? '...' : '');
+      const id = inq._id;
+      html += `<tr id="row-${id}">
+        <td style="white-space:nowrap;color:var(--text-muted);font-size:0.78rem">${dateStr}</td>
+        <td>${esc(inq.name || '—')}<br><span style="font-size:0.75rem;color:var(--text-muted)">${esc(inq.phone || '')}</span></td>
+        <td style="font-size:0.78rem"><a href="mailto:${esc(inq.email || '')}" style="color:var(--gold)">${esc(inq.email || '—')}</a></td>
+        <td><span style="background:rgba(200,169,110,0.1);border:1px solid rgba(200,169,110,0.2);padding:0.2rem 0.5rem;font-size:0.72rem;color:var(--gold)">${esc(inq.duration || '—')}</span></td>
+        <td style="font-size:0.78rem;color:var(--text-muted);max-width:200px">${esc(msg)}</td>
+        <td><button onclick="deleteInquiry('${id}')" title="Delete" style="background:transparent;border:1px solid rgba(220,80,80,0.3);color:#e05252;padding:0.25rem 0.5rem;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);transition:0.2s" onmouseover="this.style.background='rgba(220,80,80,0.15)'" onmouseout="this.style.background='transparent'">✕</button></td>
+      </tr>`;
+    });
+
+    html += '</tbody></table>';
+    html += `<p style="font-size:0.72rem;color:var(--text-muted);margin-top:1rem;text-align:right">Total: ${data.length} inquiries</p>`;
+    container.innerHTML = html;
+  } catch {
+    container.innerHTML = '<div class="empty-state" style="color:#e88">Error loading inquiries.</div>';
+  }
+}
+
+async function deleteInquiry(id) {
+  if (!confirm('Delete this inquiry? This cannot be undone.')) return;
+  try {
+    const res = await fetch(`/api/admin/inquiries/${id}?adminPassword=${encodeURIComponent(adminPassword)}`, { method: 'DELETE' });
+    const data = await res.json();
+    if (data.success) {
+      const row = document.getElementById('row-' + id);
+      if (row) row.remove();
+    }
+  } catch {
+    alert('Failed to delete inquiry.');
+  }
+}
+
+function showMsg(id, msg, type) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  el.className = 'admin-msg ' + type;
+  setTimeout(() => { el.className = 'admin-msg'; }, 6000);
+}
+
+function esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+document.getElementById('adminPass').addEventListener('keydown', e => {
+  if (e.key === 'Enter') login();
+});
+</script>
+</body>
+</html>

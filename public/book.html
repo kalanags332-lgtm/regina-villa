@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Stay — Regina Villa, Galle, Sri Lanka</title>
+  <meta name="description" content="Inquire about a long-stay at Regina Villa in Galle, Sri Lanka. Minimum 3 months. Ideal for expats, remote workers and long-term travellers." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/images/logo.jpg" />
+  <style>
+    .page-hero {
+      height: 45vh; min-height: 340px;
+      position: relative;
+      display: flex; align-items: flex-end;
+      padding-bottom: 3rem; overflow: hidden;
+    }
+    .page-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 100%); }
+    .page-hero-content { position: relative; z-index: 2; max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 2rem; }
+    .page-breadcrumb { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .page-breadcrumb a { color: var(--gold); }
+    .page-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 300; color: var(--white); }
+
+    .book-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .book-layout { grid-template-columns: 1fr; } }
+
+    .duration-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .duration-pill {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid rgba(200,169,110,0.3);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: 0.25s;
+      background: transparent;
+      font-family: var(--font-sans);
+    }
+    .duration-pill.selected, .duration-pill:hover {
+      border-color: var(--gold);
+      background: rgba(200,169,110,0.1);
+      color: var(--gold);
+    }
+
+    .info-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(200,169,110,0.15);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--cream);
+      margin-bottom: 1rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid rgba(200,169,110,0.1);
+    }
+    .info-list li {
+      display: flex; align-items: flex-start; gap: 0.7rem;
+      font-size: 0.85rem; color: var(--text-muted);
+      margin-bottom: 0.6rem; line-height: 1.5;
+    }
+    .info-list li svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(200,169,110,0.08), rgba(200,169,110,0.03));
+      border: 1px solid rgba(200,169,110,0.2);
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .highlight-box p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; }
+    .highlight-box strong { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="Regina Villa Logo" />
+      <span class="nav-logo-text">REGINA VILLA</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/about">About Galle</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/book" class="nav-book-btn active">Book a Stay</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <img src="/images/garden.jpg" alt="Book Your Stay" />
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-breadcrumb"><a href="/">Home</a> → Book a Stay</div>
+    <h1 class="page-title">Begin Your Sri Lankan Chapter</h1>
+  </div>
+</div>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="book-layout">
+
+      <!-- Left: Info Column -->
+      <div class="fade-in">
+        <span class="section-label">Stay Information</span>
+        <h2 class="section-title" style="font-size:2rem">Flexible Long-<br /><em>Stay Options</em></h2>
+        <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.8; margin-bottom:1.5rem">
+          Regina Villa is available for extended stays starting from a minimum of 3 months. Choose your own pace and stay as long as you like.
+        </p>
+
+        <div class="duration-pills">
+          <div class="duration-pill selected">3 Months</div>
+          <div class="duration-pill">4 Months</div>
+          <div class="duration-pill">6 Months</div>
+          <div class="duration-pill">9 Months</div>
+          <div class="duration-pill">12 Months</div>
+          <div class="duration-pill">Custom</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">✦ What's Included</div>
+          <ul class="info-list">
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Exclusive use of the entire villa</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Utility bills (electricity, water)</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> High-speed Wi-Fi</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Garden maintenance</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> All kitchen appliances &amp; utensils</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Owner support &amp; local guidance</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">✦ Ideal For</div>
+          <ul class="info-list">
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg> Remote workers &amp; digital nomads</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Couples &amp; families</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Retirees &amp; long-term travellers</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Writers, artists &amp; creatives</li>
+            <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Visa-run &amp; slow-travel nomads</li>
+          </ul>
+        </div>
+
+        <div class="highlight-box">
+          <p>📍 <strong>Galle, Sri Lanka</strong> — a UNESCO World Heritage city with a vibrant expat community, wonderful cafés, beaches, yoga studios, and excellent healthcare nearby. An ideal base for exploring the island.</p>
+        </div>
+      </div>
+
+      <!-- Right: Inquiry Form -->
+      <div class="fade-in" style="transition-delay:0.2s">
+        <div class="form-card">
+          <h3>Send an Inquiry</h3>
+          <p>We will review your request and respond within 24 hours with pricing and availability details.</p>
+
+          <div class="form-success" id="formSuccess">
+            <svg width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+            <h4>Inquiry Received!</h4>
+            <p>Thank you! We'll be in touch soon to discuss your stay at Regina Villa.</p>
+          </div>
+
+          <form id="inquiryForm" onsubmit="submitInquiry(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inq-name">Full Name *</label>
+                <input id="inq-name" type="text" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="inq-nationality">Nationality *</label>
+                <input id="inq-nationality" type="text" placeholder="e.g. German, British..." required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inq-email">Email Address *</label>
+                <input id="inq-email" type="email" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="inq-phone">Phone / WhatsApp *</label>
+                <input id="inq-phone" type="tel" placeholder="+1 234 567 8900" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inq-checkin">Planned Arrival Date</label>
+                <input id="inq-checkin" type="date" />
+              </div>
+              <div class="form-group">
+                <label for="inq-guests">Number of Guests</label>
+                <select id="inq-guests">
+                  <option value="">Select</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests (couple)</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="4+">4+ Guests</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inq-duration">Intended Stay Duration *</label>
+              <select id="inq-duration" required>
+                <option value="">Select duration</option>
+                <option value="3 months">3 Months</option>
+                <option value="4 months">4 Months</option>
+                <option value="5 months">5 Months</option>
+                <option value="6 months">6 Months</option>
+                <option value="9 months">9 Months</option>
+                <option value="12 months">12 Months (1 Year)</option>
+                <option value="18 months">18 Months</option>
+                <option value="24 months+">24 Months or more</option>
+                <option value="flexible">Flexible / Discuss</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inq-message">Tell Us About Yourself *</label>
+              <textarea id="inq-message" placeholder="Share a little about yourself, your purpose for visiting Sri Lanka, your lifestyle preferences, and any questions you have about the villa..." style="min-height:130px" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;padding:1rem" id="submitBtn">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Inquiry to Regina Villa
+            </button>
+            <p style="font-size:0.72rem; color:var(--text-muted); margin-top:1rem; text-align:center">
+              We typically respond within 24 hours. Your information is kept private.
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="padding-top:2rem">
+      <span>© 2024 Regina Villa, Galle, Sri Lanka. All rights reserved.</span>
+      <span><a href="/" style="color:var(--gold)">← Back to Home</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+
+document.querySelectorAll('.duration-pill').forEach(pill => {
+  pill.addEventListener('click', function() {
+    document.querySelectorAll('.duration-pill').forEach(p => p.classList.remove('selected'));
+    this.classList.add('selected');
+    const durMap = {
+      '3 Months': '3 months', '4 Months': '4 months', '6 Months': '6 months',
+      '9 Months': '9 months', '12 Months': '12 months', 'Custom': 'flexible'
+    };
+    const sel = document.getElementById('inq-duration');
+    if (sel && durMap[this.textContent]) sel.value = durMap[this.textContent];
+  });
+});
+
+async function submitInquiry(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const payload = {
+    name: document.getElementById('inq-name')?.value,
+    email: document.getElementById('inq-email')?.value,
+    phone: document.getElementById('inq-phone')?.value,
+    checkIn: document.getElementById('inq-checkin')?.value,
+    duration: document.getElementById('inq-duration')?.value,
+    message: `Nationality: ${document.getElementById('inq-nationality')?.value || 'N/A'}\nGuests: ${document.getElementById('inq-guests')?.value || 'N/A'}\n\n${document.getElementById('inq-message')?.value}`,
+  };
+
+  try {
+    const res = await fetch('/api/inquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('inquiryForm').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    }
+  } catch {
+    alert('Something went wrong. Please email us directly.');
+    btn.disabled = false;
+    btn.textContent = 'Send Inquiry to Regina Villa';
+  }
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

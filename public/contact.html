@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Regina Villa, Galle, Sri Lanka</title>
+  <meta name="description" content="Get in touch with Regina Villa. We're happy to answer your questions about long-term stays in Galle, Sri Lanka." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/images/logo.jpg" />
+  <style>
+    .page-hero {
+      height: 45vh; min-height: 340px;
+      position: relative; display: flex; align-items: flex-end;
+      padding-bottom: 3rem; overflow: hidden;
+    }
+    .page-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.2)); }
+    .page-hero-content { position: relative; z-index: 2; max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 2rem; }
+    .page-breadcrumb { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .page-breadcrumb a { color: var(--gold); }
+    .page-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 300; color: var(--white); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+    }
+    @media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; } }
+
+    .contact-detail-card {
+      background: var(--dark-3);
+      padding: 2rem;
+      border: 1px solid rgba(200,169,110,0.1);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+      transition: 0.25s;
+    }
+    .contact-detail-card:hover { border-color: rgba(200,169,110,0.3); }
+    .contact-detail-icon {
+      width: 48px; height: 48px;
+      background: rgba(200,169,110,0.08);
+      border: 1px solid rgba(200,169,110,0.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-detail-icon svg { color: var(--gold); }
+    .contact-detail-label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; }
+    .contact-detail-value { font-size: 1rem; color: var(--cream); font-family: var(--font-serif); }
+    .contact-detail-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="Regina Villa Logo" />
+      <span class="nav-logo-text">REGINA VILLA</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/about">About Galle</a></li>
+      <li><a href="/contact" class="active">Contact</a></li>
+      <li><a href="/book" class="nav-book-btn">Book a Stay</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <img src="/images/garden2.webp" alt="Contact Regina Villa" />
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-breadcrumb"><a href="/">Home</a> → Contact</div>
+    <h1 class="page-title">Get In Touch</h1>
+  </div>
+</div>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Left: Details -->
+      <div class="fade-in">
+        <span class="section-label">Contact Regina Villa</span>
+        <h2 class="section-title" style="font-size:2.2rem">We'd Love to<br /><em>Hear From You</em></h2>
+        <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.8; margin-bottom:2rem">
+          Whether you have questions about the villa, Galle, long-stay visas, or anything else — we're happy to help. Reach out anytime.
+        </p>
+
+        <div class="contact-detail-card">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.73-.73a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-label">Telephone</div>
+            <div class="contact-detail-value" id="c-phone">Loading...</div>
+            <div class="contact-detail-sub">Available daily 8am – 8pm (Sri Lanka Time, UTC+5:30)</div>
+          </div>
+        </div>
+
+        <div class="contact-detail-card">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-label">WhatsApp</div>
+            <div class="contact-detail-value" id="c-whatsapp">Loading...</div>
+            <div class="contact-detail-sub">Preferred for international guests</div>
+          </div>
+        </div>
+
+        <div class="contact-detail-card">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-value" id="c-email">Loading...</div>
+            <div class="contact-detail-sub">Responses within 24 hours</div>
+          </div>
+        </div>
+
+        <div class="contact-detail-card">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-label">Address</div>
+            <div class="contact-detail-value" id="c-address">Loading...</div>
+            <div class="contact-detail-sub"><a href="https://maps.app.goo.gl/Reginavilla" target="_blank" style="color:var(--gold)">View on Google Maps →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Quick Form -->
+      <div class="fade-in" style="transition-delay:0.2s">
+        <div class="form-card">
+          <h3>Send a Message</h3>
+          <p>Have a question? Drop us a note and we'll respond promptly.</p>
+
+          <div class="form-success" id="formSuccess">
+            <svg width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+            <h4>Message Sent!</h4>
+            <p>Thank you for reaching out. We'll reply to your email within 24 hours.</p>
+          </div>
+
+          <form id="contactForm" onsubmit="submitContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-name">Full Name *</label>
+                <input id="c-name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="c-email-f">Email *</label>
+                <input id="c-email-f" type="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="c-subject">Subject *</label>
+              <select id="c-subject" required>
+                <option value="">Select a topic</option>
+                <option value="booking inquiry">Booking Inquiry</option>
+                <option value="pricing">Pricing & Availability</option>
+                <option value="villa details">Villa Details</option>
+                <option value="galle info">About Galle</option>
+                <option value="visa info">Visa Information</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-msg">Message *</label>
+              <textarea id="c-msg" placeholder="Your message..." style="min-height:150px" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center" id="c-submit">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Google Maps embed -->
+<div style="height:450px; border-top:1px solid rgba(200,169,110,0.1)">
+  <iframe
+    style="width:100%;height:100%;border:none;filter:grayscale(20%) contrast(1.1)"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117.68!2d80.252308!3d6.0515405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae17389f4a4aa15%3A0xec133f918c5a7e6f!2sReginavilla!5e0!3m2!1sen!2slk!4v1719669116!5m2!1sen!2slk"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    title="Regina Villa on Google Maps">
+  </iframe>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="padding-top:2rem">
+      <span>© 2024 Regina Villa, Galle, Sri Lanka. All rights reserved.</span>
+      <span><a href="/" style="color:var(--gold)">← Back to Home</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+
+async function loadContact() {
+  try {
+    const d = await fetch('/api/contact').then(r => r.json());
+    document.getElementById('c-phone').textContent = d.phone;
+    document.getElementById('c-whatsapp').textContent = d.whatsapp;
+    document.getElementById('c-email').textContent = d.email;
+    document.getElementById('c-address').textContent = d.address;
+  } catch {}
+}
+loadContact();
+
+async function submitContact(e) {
+  e.preventDefault();
+  const btn = document.getElementById('c-submit');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  const payload = {
+    name: document.getElementById('c-name').value,
+    email: document.getElementById('c-email-f').value,
+    phone: '',
+    checkIn: '',
+    duration: document.getElementById('c-subject').value,
+    message: document.getElementById('c-msg').value,
+  };
+  try {
+    const res = await fetch('/api/inquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    }
+  } catch {
+    alert('Error sending. Please try again.');
+    btn.disabled = false; btn.textContent = 'Send Message';
+  }
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

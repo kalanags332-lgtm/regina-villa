@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regina Villa — Luxury Long-Stay Villa in Galle, Sri Lanka</title>
+  <meta name="description" content="Experience the enchanting beauty of Galle, Sri Lanka at Regina Villa. Luxurious long-stay villa offering minimum 3-month stays surrounded by tropical gardens." />
+  <meta name="keywords" content="Regina Villa, Galle Sri Lanka villa, long stay villa, luxury accommodation Sri Lanka, expat villa Galle" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/images/logo.jpg" />
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="Regina Villa Logo" />
+      <span class="nav-logo-text">REGINA VILLA</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/about">About Galle</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/book" class="nav-book-btn">Book a Stay</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────────────────── -->
+<section class="hero" id="home">
+  <div class="hero-slides">
+    <div class="hero-slide active">
+      <img src="/images/garden.jpg" alt="Regina Villa Garden View" loading="eager" />
+    </div>
+    <div class="hero-slide">
+      <img src="/images/living-room.webp" alt="Regina Villa Living Room" loading="lazy" />
+    </div>
+    <div class="hero-slide">
+      <img src="/images/bedroom.webp" alt="Regina Villa Bedroom" loading="lazy" />
+    </div>
+    <div class="hero-slide">
+      <img src="/images/garden2.webp" alt="Regina Villa Garden" loading="lazy" />
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  
+  <div class="hero-content">
+    <span class="hero-tagline">Welcome to</span>
+    <h1 class="hero-title">Regina<br /><em>Villa</em></h1>
+    <div class="hero-location">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      Galle, Southern Province, Sri Lanka
+    </div>
+    <p class="hero-desc">
+      An intimate sanctuary nestled in tropical gardens — where the rhythm of Sri Lanka becomes your own. Crafted for those who seek a deeper, longer experience of island life.
+    </p>
+    <div class="hero-actions">
+      <a href="/book" class="btn btn-gold">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Your Stay
+      </a>
+      <a href="/gallery" class="btn btn-outline">
+        Explore Gallery
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+
+  <div class="hero-indicators">
+    <div class="hero-indicator active" onclick="goToSlide(0)"></div>
+    <div class="hero-indicator" onclick="goToSlide(1)"></div>
+    <div class="hero-indicator" onclick="goToSlide(2)"></div>
+    <div class="hero-indicator" onclick="goToSlide(3)"></div>
+  </div>
+</section>
+
+<!-- ── Stats Bar ────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item fade-in">
+      <div class="stat-number">3+</div>
+      <div class="stat-label">Month Minimum Stay</div>
+    </div>
+    <div class="stat-item fade-in" style="transition-delay:0.1s">
+      <div class="stat-number">2</div>
+      <div class="stat-label">Spacious Bedrooms</div>
+    </div>
+    <div class="stat-item fade-in" style="transition-delay:0.2s">
+      <div class="stat-number">5★</div>
+      <div class="stat-label">Guest Experience</div>
+    </div>
+    <div class="stat-item fade-in" style="transition-delay:0.3s">
+      <div class="stat-number">Galle</div>
+      <div class="stat-label">UNESCO World Heritage City</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── About the Villa ──────────────────────────────────────── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images fade-in">
+        <img class="about-img-main" src="/images/garden.jpg" alt="Regina Villa exterior" loading="lazy" />
+        <img class="about-img-secondary" src="/images/living-room.webp" alt="Regina Villa living room" loading="lazy" />
+        <div class="about-badge">
+          <div class="about-badge-num">100%</div>
+          <span class="about-badge-text">Private &amp; Exclusive</span>
+        </div>
+      </div>
+
+      <div class="about-content fade-in">
+        <span class="section-label">About the Villa</span>
+        <h2 class="section-title">Your Private Sanctuary<br /><em>in Paradise</em></h2>
+        <p class="section-subtitle">
+          Nestled in a lush tropical garden in the historic city of Galle, Regina Villa is a beautifully appointed private home offering an authentic Sri Lankan living experience for discerning long-stay guests.
+        </p>
+        <p class="section-subtitle" style="margin-top:1rem;">
+          With traditional architecture, polished teak furnishings, and a verdant garden alive with birdsong, the villa offers a rare opportunity to slow down and truly immerse yourself in island life.
+        </p>
+
+        <div class="about-features">
+          <div class="feature-tag">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            2 Bedrooms
+          </div>
+          <div class="feature-tag">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Tropical Garden
+          </div>
+          <div class="feature-tag">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Full Kitchen
+          </div>
+          <div class="feature-tag">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            500m to Beach
+          </div>
+          <div class="feature-tag">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Flexible Duration
+          </div>
+          <div class="feature-tag">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            Prime Galle Location
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem">
+          <a href="/about" class="btn btn-outline">Discover More About Galle</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Gallery Preview ──────────────────────────────────────── -->
+<section class="section-pad gallery-bg">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-label">Photo Gallery</span>
+      <h2 class="section-title">A Glimpse of<br /><em>Villa Life</em></h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('/images/garden.jpg')">
+        <img src="/images/garden.jpg" alt="Villa Garden" loading="lazy" />
+        <div class="gallery-overlay">
+          <svg width="32" height="32" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/images/bedroom.webp')">
+        <img src="/images/bedroom.webp" alt="Main Bedroom" loading="lazy" />
+        <div class="gallery-overlay">
+          <svg width="32" height="32" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/images/living-room.webp')">
+        <img src="/images/living-room.webp" alt="Living Room" loading="lazy" />
+        <div class="gallery-overlay">
+          <svg width="32" height="32" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/images/bedroom2.webp')">
+        <img src="/images/bedroom2.webp" alt="Second Bedroom" loading="lazy" />
+        <div class="gallery-overlay">
+          <svg width="32" height="32" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/images/kitchen.webp')">
+        <img src="/images/kitchen.webp" alt="Kitchen" loading="lazy" />
+        <div class="gallery-overlay">
+          <svg width="32" height="32" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:3rem">
+      <a href="/gallery" class="btn btn-outline">View Full Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Amenities ────────────────────────────────────────────── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-label">Villa Amenities</span>
+      <h2 class="section-title">Everything You<br /><em>Need at Home</em></h2>
+      <p class="section-subtitle" style="margin:0 auto">
+        Thoughtfully furnished for long-stay comfort — everything you need to live, work, and unwind in Sri Lanka.
+      </p>
+    </div>
+
+    <div class="amenities-grid" style="margin-top:3rem">
+      <div class="amenity-card fade-in">
+        <div class="amenity-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2 4v16h20V4H2zm2 2h16v12H4V6z"/><path d="M8 10h8M8 14h8"/></svg>
+        </div>
+        <h3 class="amenity-title">2 Furnished Bedrooms</h3>
+        <p class="amenity-desc">Spacious bedrooms with quality beds, ample storage, natural light and garden-view windows for restful nights.</p>
+      </div>
+      <div class="amenity-card fade-in" style="transition-delay:0.1s">
+        <div class="amenity-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+        </div>
+        <h3 class="amenity-title">Spacious Living Room</h3>
+        <p class="amenity-desc">Traditional Sri Lankan teak furniture in an airy, light-filled lounge — perfect for relaxing and entertaining.</p>
+      </div>
+      <div class="amenity-card fade-in" style="transition-delay:0.2s">
+        <div class="amenity-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 2h1l1 5h16l-2 7H6L4 4H2"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+        </div>
+        <h3 class="amenity-title">Fully Equipped Kitchen</h3>
+        <p class="amenity-desc">A well-appointed kitchen with gas cooking, refrigerator, and all utensils — cook your own Sri Lankan meals.</p>
+      </div>
+      <div class="amenity-card fade-in" style="transition-delay:0.3s">
+        <div class="amenity-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5z"/><path d="M3 10h18"/></svg>
+        </div>
+        <h3 class="amenity-title">Lush Tropical Garden</h3>
+        <p class="amenity-desc">A stunning private garden with mature trees, flowering plants, and open-air verandah seating.</p>
+      </div>
+      <div class="amenity-card fade-in" style="transition-delay:0.4s">
+        <div class="amenity-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="amenity-title">High-Speed Wi-Fi</h3>
+        <p class="amenity-desc">Reliable high-speed internet throughout the villa — ideal for remote workers and digital nomads.</p>
+      </div>
+      <div class="amenity-card fade-in" style="transition-delay:0.5s">
+        <div class="amenity-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="amenity-title">Prime Location</h3>
+        <p class="amenity-desc">Steps from Galle Fort, beach access, local markets, cafés, and all the conveniences of the city.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Booking / Inquiry ─────────────────────────────────────── -->
+<section class="section-pad booking-section" id="book">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-info fade-in">
+        <span class="section-label">Book Your Stay</span>
+        <h2 class="section-title">Begin Your<br /><em>Sri Lankan Chapter</em></h2>
+        <p class="section-subtitle">
+          Regina Villa is designed for long-stay guests who want to live — not just visit — Sri Lanka. Minimum booking is 3 months.
+        </p>
+
+        <div class="pricing-card">
+          <div class="pricing-duration">3 Months</div>
+          <div class="pricing-unit">minimum stay required</div>
+          <div class="pricing-perks">
+            <div class="perk">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Flexible departure — stay 3, 6, 9 months or longer
+            </div>
+            <div class="perk">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Entire villa exclusively yours
+            </div>
+            <div class="perk">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Utility bills &amp; garden maintenance included
+            </div>
+            <div class="perk">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Local support &amp; assistance from the owner
+            </div>
+            <div class="perk">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Contact us for monthly pricing
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top:1.5rem; font-size:0.82rem; color:var(--text-muted); line-height:1.8">
+          🌴 Popular with remote workers, retirees, couples, and families exploring Sri Lanka at their own pace.
+        </p>
+      </div>
+
+      <div class="fade-in" style="transition-delay:0.2s">
+        <div class="form-card">
+          <h3>Send an Inquiry</h3>
+          <p>Fill in your details and we'll get back to you within 24 hours.</p>
+          
+          <div class="form-success" id="formSuccess">
+            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+            <h4>Inquiry Received!</h4>
+            <p>Thank you for your interest in Regina Villa. We will be in touch shortly to discuss your stay.</p>
+          </div>
+
+          <form id="inquiryForm" onsubmit="submitInquiry(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inq-name">Full Name *</label>
+                <input id="inq-name" type="text" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="inq-email">Email Address *</label>
+                <input id="inq-email" type="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inq-phone">Phone / WhatsApp</label>
+                <input id="inq-phone" type="tel" placeholder="+1 234 567 8900" />
+              </div>
+              <div class="form-group">
+                <label for="inq-checkin">Preferred Arrival</label>
+                <input id="inq-checkin" type="date" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inq-duration">Intended Stay Duration *</label>
+              <select id="inq-duration" required>
+                <option value="">Select duration</option>
+                <option value="3 months">3 Months</option>
+                <option value="4 months">4 Months</option>
+                <option value="5 months">5 Months</option>
+                <option value="6 months">6 Months</option>
+                <option value="9 months">9 Months</option>
+                <option value="12 months">12 Months (1 Year)</option>
+                <option value="18 months">18 Months</option>
+                <option value="24 months+">24 Months or more</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inq-message">Message</label>
+              <textarea id="inq-message" placeholder="Tell us about yourself, your party size, and any questions you have..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center" id="submitBtn">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ─────────────────────────────────────────── -->
+<section class="section-pad testimonials-section">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-label">Guest Stories</span>
+      <h2 class="section-title">What Our Guests<br /><em>Say About Us</em></h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testimonial-text">"We spent six incredible months at Regina Villa. The garden is absolutely magical — we had our morning coffee surrounded by birdsong every day. It truly felt like home."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sophie &amp; Mark T.</div>
+            <div class="testimonial-country">🇩🇪 Germany · 6 months stay</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in" style="transition-delay:0.15s">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testimonial-text">"As a remote worker, I needed reliable Wi-Fi and a calm environment. Regina Villa delivered both in spades. Galle is the most charming city in Sri Lanka — I didn't want to leave."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">James R.</div>
+            <div class="testimonial-country">🇬🇧 United Kingdom · 4 months stay</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in" style="transition-delay:0.3s">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testimonial-text">"The owner was incredibly helpful in orienting us to local life. The villa is private, beautiful and very well-kept. We came for 3 months and extended to stay for 9."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Anna &amp; Peter V.</div>
+            <div class="testimonial-country">🇳🇱 Netherlands · 9 months stay</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Location / Map ───────────────────────────────────────── -->
+<section class="section-pad map-section">
+  <div class="container">
+    <div class="text-center fade-in" style="margin-bottom:3rem">
+      <span class="section-label">Find Us</span>
+      <h2 class="section-title">Our Location in<br /><em>Galle, Sri Lanka</em></h2>
+    </div>
+  </div>
+
+  <div class="map-grid">
+    <div class="map-info">
+      <span class="section-label" style="margin-bottom:2rem">Contact & Location</span>
+
+      <div class="map-contact-item" id="mc-address">
+        <div class="map-contact-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div>
+          <div class="map-contact-label">Address</div>
+          <div class="map-contact-value" id="contact-address">Loading...</div>
+        </div>
+      </div>
+
+      <div class="map-contact-item" id="mc-phone">
+        <div class="map-contact-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.73-.73a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="map-contact-label">Telephone</div>
+          <div class="map-contact-value" id="contact-phone">Loading...</div>
+        </div>
+      </div>
+
+      <div class="map-contact-item">
+        <div class="map-contact-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="map-contact-label">Email</div>
+          <div class="map-contact-value" id="contact-email">Loading...</div>
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem">
+        <a href="/book" class="btn btn-gold" style="display:inline-flex">
+          Book a Stay
+        </a>
+      </div>
+    </div>
+
+    <iframe 
+      class="map-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117.68!2d80.252308!3d6.0515405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae17389f4a4aa15%3A0xec133f918c5a7e6f!2sReginavilla!5e0!3m2!1sen!2slk!4v1719669116!5m2!1sen!2slk"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Regina Villa Location on Google Maps">
+    </iframe>
+  </div>
+</section>
+
+<!-- ── Footer ───────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/images/logo.jpg" alt="Regina Villa" />
+        <p class="footer-desc">
+          A private tropical villa in the heart of Galle, Sri Lanka. Thoughtfully appointed for long-stay guests seeking an authentic island living experience.
+        </p>
+        <div class="footer-social">
+          <div class="social-btn" title="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <div class="social-btn" title="Instagram">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="social-btn" title="WhatsApp">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About Galle</a></li>
+          <li><a href="/book">Book a Stay</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Stay Options</h4>
+        <ul class="footer-links">
+          <li><a href="/book">3 Months</a></li>
+          <li><a href="/book">6 Months</a></li>
+          <li><a href="/book">9 Months</a></li>
+          <li><a href="/book">12 Months</a></li>
+          <li><a href="/book">Custom Duration</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contact</h4>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <span id="footer-address">Galle, Sri Lanka</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.73-.73a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.22 16.92z"/></svg>
+          <span id="footer-phone">Loading...</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span id="footer-email">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Regina Villa, Galle, Sri Lanka. All rights reserved.</span>
+      <span>Designed with ♥ for long-stay guests</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Lightbox ─────────────────────────────────────────────── -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Gallery" />
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

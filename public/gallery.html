@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Regina Villa, Galle, Sri Lanka</title>
+  <meta name="description" content="Explore the beauty of Regina Villa through our photo gallery — gardens, bedrooms, living spaces and more." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/images/logo.jpg" />
+  <style>
+    .page-hero {
+      height: 50vh;
+      min-height: 380px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 3rem;
+      overflow: hidden;
+    }
+    .page-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 100%);
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .page-breadcrumb {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .page-breadcrumb a { color: var(--gold); }
+    .page-breadcrumb a:hover { text-decoration: underline; }
+    .page-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 300;
+      color: var(--white);
+    }
+
+    /* Full gallery grid */
+    .full-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 8px;
+      margin-top: 3rem;
+    }
+    .full-gallery-item {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .full-gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .full-gallery-item:hover img { transform: scale(1.06); }
+    .full-gallery-item .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+    .full-gallery-item:hover .gallery-overlay { background: rgba(200,169,110,0.12); }
+    .full-gallery-item .gallery-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1rem 1.2rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      transform: translateY(100%);
+      transition: transform 0.35s ease;
+    }
+    .full-gallery-item:hover .gallery-label { transform: translateY(0); }
+
+    .full-gallery-item.featured {
+      grid-column: span 2;
+      aspect-ratio: 16/7;
+    }
+    @media (max-width: 768px) {
+      .full-gallery-item.featured { grid-column: span 1; aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="Regina Villa Logo" />
+      <span class="nav-logo-text">REGINA VILLA</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/gallery" class="active">Gallery</a></li>
+      <li><a href="/about">About Galle</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/book" class="nav-book-btn">Book a Stay</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <img src="/images/garden2.webp" alt="Regina Villa Gallery" />
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-breadcrumb"><a href="/">Home</a> → Gallery</div>
+    <h1 class="page-title">Photo Gallery</h1>
+  </div>
+</div>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-label">A Visual Tour</span>
+      <h2 class="section-title">Experience Regina<br /><em>Villa</em></h2>
+      <p class="section-subtitle" style="margin:0 auto">
+        From the serene tropical garden to the beautifully furnished interiors — every corner of Regina Villa is crafted for comfort and beauty.
+      </p>
+    </div>
+
+    <div class="full-gallery">
+      <div class="full-gallery-item featured fade-in" onclick="openLightbox('/images/garden.jpg')">
+        <img src="/images/garden.jpg" alt="Regina Villa Garden — Exterior View" loading="lazy" />
+        <div class="gallery-overlay"></div>
+        <div class="gallery-label">Garden & Exterior</div>
+      </div>
+
+      <div class="full-gallery-item fade-in" onclick="openLightbox('/images/living-room.webp')">
+        <img src="/images/living-room.webp" alt="Living Room" loading="lazy" />
+        <div class="gallery-overlay"></div>
+        <div class="gallery-label">Living Room</div>
+      </div>
+
+      <div class="full-gallery-item fade-in" onclick="openLightbox('/images/bedroom.webp')">
+        <img src="/images/bedroom.webp" alt="Main Bedroom" loading="lazy" />
+        <div class="gallery-overlay"></div>
+        <div class="gallery-label">Master Bedroom</div>
+      </div>
+
+      <div class="full-gallery-item fade-in" onclick="openLightbox('/images/bedroom2.webp')">
+        <img src="/images/bedroom2.webp" alt="Second Bedroom" loading="lazy" />
+        <div class="gallery-overlay"></div>
+        <div class="gallery-label">Second Bedroom</div>
+      </div>
+
+      <div class="full-gallery-item fade-in" onclick="openLightbox('/images/kitchen.webp')">
+        <img src="/images/kitchen.webp" alt="Kitchen" loading="lazy" />
+        <div class="gallery-overlay"></div>
+        <div class="gallery-label">Kitchen</div>
+      </div>
+
+      <div class="full-gallery-item fade-in" onclick="openLightbox('/images/garden2.webp')">
+        <img src="/images/garden2.webp" alt="Garden" loading="lazy" />
+        <div class="gallery-overlay"></div>
+        <div class="gallery-label">Tropical Garden</div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:3rem">
+      <a href="/book" class="btn btn-gold">Inquire About a Stay</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Strip -->
+<div style="background:var(--dark-3); border-top:1px solid rgba(200,169,110,0.1); border-bottom:1px solid rgba(200,169,110,0.1); padding:3rem 0;">
+  <div class="container">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:2rem;">
+      <div>
+        <span class="section-label">Ready to make it home?</span>
+        <h3 style="font-family:var(--font-serif); font-size:2rem; font-weight:300; color:var(--cream)">Book Your Long Stay at Regina Villa</h3>
+      </div>
+      <a href="/book" class="btn btn-gold">Check Availability</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="padding-top:2rem">
+      <span>© 2024 Regina Villa, Galle, Sri Lanka. All rights reserved.</span>
+      <span><a href="/" style="color:var(--gold)">← Back to Home</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Gallery" />
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+</div>
+
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

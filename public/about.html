@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Galle, Sri Lanka — Regina Villa</title>
+  <meta name="description" content="Discover why Galle, Sri Lanka is the perfect destination for long-term stays. UNESCO World Heritage Fort, beaches, culture and vibrant expat community." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/images/logo.jpg" />
+  <style>
+    .page-hero {
+      height: 55vh; min-height: 420px;
+      position: relative; display: flex; align-items: flex-end;
+      padding-bottom: 3rem; overflow: hidden;
+    }
+    .page-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1)); }
+    .page-hero-content { position: relative; z-index: 2; max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 2rem; }
+    .page-breadcrumb { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .page-breadcrumb a { color: var(--gold); }
+    .page-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; color: var(--white); }
+    .page-subtitle { font-size: 1rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem; }
+
+    .galle-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5px;
+      margin-top: 3rem;
+    }
+    .galle-card {
+      background: var(--dark-3);
+      padding: 2.5rem 2rem;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .galle-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0);
+      transition: 0.4s;
+    }
+    .galle-card:hover { background: var(--dark-4); }
+    .galle-card:hover::after { transform: scaleX(1); }
+    .galle-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .galle-card-title { font-family: var(--font-serif); font-size: 1.25rem; color: var(--cream); margin-bottom: 0.6rem; }
+    .galle-card-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; }
+
+    .facts-strip {
+      background: var(--dark-3);
+      border-top: 1px solid rgba(200,169,110,0.1);
+      border-bottom: 1px solid rgba(200,169,110,0.1);
+      padding: 3rem 0;
+    }
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .fact-item .fact-num { font-family: var(--font-serif); font-size: 2.2rem; color: var(--gold); }
+    .fact-item .fact-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+    @media (max-width: 768px) { .facts-grid { grid-template-columns: 1fr 1fr; } }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+    .prose p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    .prose h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--cream);
+      margin: 2rem 0 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.jpg" alt="Regina Villa Logo" />
+      <span class="nav-logo-text">REGINA VILLA</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/about" class="active">About Galle</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/book" class="nav-book-btn">Book a Stay</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <img src="/images/garden.jpg" alt="Galle Sri Lanka" />
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-breadcrumb"><a href="/">Home</a> → About Galle</div>
+    <h1 class="page-title">Discover Galle</h1>
+    <p class="page-subtitle">UNESCO World Heritage City · Southern Sri Lanka</p>
+  </div>
+</div>
+
+<!-- Facts Strip -->
+<div class="facts-strip">
+  <div class="container">
+    <div class="facts-grid">
+      <div class="fact-item fade-in">
+        <div class="fact-num">1588</div>
+        <div class="fact-label">Fort Founded</div>
+      </div>
+      <div class="fact-item fade-in" style="transition-delay:0.1s">
+        <div class="fact-num">~120km</div>
+        <div class="fact-label">From Colombo</div>
+      </div>
+      <div class="fact-item fade-in" style="transition-delay:0.2s">
+        <div class="fact-num">UNESCO</div>
+        <div class="fact-label">World Heritage Site</div>
+      </div>
+      <div class="fact-item fade-in" style="transition-delay:0.3s">
+        <div class="fact-num">27°C</div>
+        <div class="fact-label">Average Temperature</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why Galle -->
+<section class="section-pad">
+  <div class="container">
+    <div class="two-col">
+      <div class="fade-in">
+        <span class="section-label">Why Choose Galle</span>
+        <h2 class="section-title">A City Unlike<br /><em>Any Other</em></h2>
+        <div class="prose">
+          <p>
+            Galle is a jewel of the Indian Ocean — a living, breathing UNESCO World Heritage city where 16th-century Dutch colonial architecture meets tropical island life. It's a city of layered histories, vibrant culture, and extraordinary natural beauty.
+          </p>
+          <h3>A Haven for Long-Term Visitors</h3>
+          <p>
+            The city has grown into one of Asia's most beloved destinations for expats, digital nomads, and long-stay travellers. With a thriving community of international residents, excellent English proficiency, world-class cafés, yoga studios, and a relaxed pace of life — Galle offers an unmatched quality of life at a fraction of European costs.
+          </p>
+          <p>
+            From the ramparts of Galle Fort you can watch the Indian Ocean at sunset. Within minutes you can reach pristine beaches like Unawatuna, Jungle Beach, and Mirissa. Within an hour lies the incredible cultural triangle of the south.
+          </p>
+        </div>
+      </div>
+
+      <div class="fade-in" style="transition-delay:0.2s">
+        <img src="/images/garden.jpg" alt="Galle, Sri Lanka" style="width:100%;height:450px;object-fit:cover;box-shadow:var(--shadow-card)" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Highlights Grid -->
+<section class="section-pad" style="background:var(--dark-2); padding-top:2rem">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-label">What to Discover</span>
+      <h2 class="section-title">Life in Galle</h2>
+    </div>
+    <div class="galle-highlights">
+      <div class="galle-card fade-in">
+        <div class="galle-card-icon">🏰</div>
+        <h3 class="galle-card-title">Galle Fort</h3>
+        <p class="galle-card-text">A UNESCO World Heritage Site — wander cobblestone streets lined with boutique hotels, galleries, cafés, and colonial-era churches.</p>
+      </div>
+      <div class="galle-card fade-in" style="transition-delay:0.1s">
+        <div class="galle-card-icon">🌊</div>
+        <h3 class="galle-card-title">Beaches</h3>
+        <p class="galle-card-text">Unawatuna, Jungle Beach, Hikkaduwa and Mirissa are all within easy reach — crystal waters, golden sands, world-class surfing.</p>
+      </div>
+      <div class="galle-card fade-in" style="transition-delay:0.2s">
+        <div class="galle-card-icon">🍽️</div>
+        <h3 class="galle-card-title">Cuisine & Cafés</h3>
+        <p class="galle-card-text">A thriving food scene ranging from authentic Sri Lankan rice &amp; curry to world-class restaurants, specialty coffee, and healthy cafés.</p>
+      </div>
+      <div class="galle-card fade-in" style="transition-delay:0.3s">
+        <div class="galle-card-icon">🧘</div>
+        <h3 class="galle-card-title">Wellness & Yoga</h3>
+        <p class="galle-card-text">Galle is a wellness hub with yoga retreats, Ayurvedic spas, meditation centres, and a healthy, active community of practitioners.</p>
+      </div>
+      <div class="galle-card fade-in" style="transition-delay:0.4s">
+        <div class="galle-card-icon">💻</div>
+        <h3 class="galle-card-title">Remote-Work Ready</h3>
+        <p class="galle-card-text">Reliable internet, co-working spaces, international SIM cards, and a large community of remote workers and entrepreneurs.</p>
+      </div>
+      <div class="galle-card fade-in" style="transition-delay:0.5s">
+        <div class="galle-card-icon">🌿</div>
+        <h3 class="galle-card-title">Nature & Wildlife</h3>
+        <p class="galle-card-text">Sinharaja Rainforest, whale watching in Mirissa, sea turtle nesting sites, and incredible birdwatching all within easy reach.</p>
+      </div>
+      <div class="galle-card fade-in" style="transition-delay:0.6s">
+        <div class="galle-card-icon">🏥</div>
+        <h3 class="galle-card-title">Healthcare</h3>
+        <p class="galle-card-text">Good quality hospitals, pharmacies, and medical facilities in Galle. Colombo's world-class hospitals are just 2 hours away.</p>
+      </div>
+      <div class="galle-card fade-in" style="transition-delay:0.7s">
+        <div class="galle-card-icon">🛒</div>
+        <h3 class="galle-card-title">Easy Living</h3>
+        <p class="galle-card-text">Supermarkets, local markets, laundry services, banks, ATMs, and everything needed for comfortable day-to-day living.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visa Info -->
+<section class="section-pad">
+  <div class="container">
+    <div style="max-width:760px; margin:0 auto; text-align:center" class="fade-in">
+      <span class="section-label">Visa Information</span>
+      <h2 class="section-title">Visiting Sri Lanka<br /><em>Long-Term</em></h2>
+      <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.9; margin-bottom:1.5rem">
+        Sri Lanka offers tourist visas allowing stays of up to 30 days (extendable to 90 days in country). Many long-stay guests renew their visas with regular border runs to India or the Maldives. We are happy to guide you on the most up-to-date visa procedures for your nationality.
+      </p>
+      <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.9">
+        📌 <strong style="color:var(--gold)">Pro tip:</strong> Apply online at the Sri Lanka ETA website before arrival for the easiest entry. Contact us and we'll share tips from our experienced long-stay guests.
+      </p>
+      <div style="margin-top:2.5rem">
+        <a href="/book" class="btn btn-gold" style="margin-right:1rem">Inquire About a Stay</a>
+        <a href="/contact" class="btn btn-outline">Ask a Question</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="padding-top:2rem">
+      <span>© 2024 Regina Villa, Galle, Sri Lanka. All rights reserved.</span>
+      <span><a href="/" style="color:var(--gold)">← Back to Home</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
